@@ -12,6 +12,12 @@ const tree = new TreeGraph({
   fitView: true,
   width: document.body.clientWidth,
   height: document.body.clientHeight,
+  modes: {
+    default: [
+      'drag-canvas',
+      'zoom-canvas',
+    ],
+  },
   layout: {
     type: 'dendrogram',
     direction: 'TB',
