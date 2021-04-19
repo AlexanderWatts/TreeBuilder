@@ -7,8 +7,6 @@ const createNewTreeButton = document.getElementById('createNewTreeButton');
 
 let defaultLevels = heightOfTreeInput.value;
 
-const root = buildBalancedTree(defaultLevels);
-
 const tree = new TreeGraph({
   container: 'root',
   fitView: true,
@@ -32,8 +30,10 @@ heightOfTreeInput.addEventListener('input', (event) => {
 });
 
 createNewTreeButton.addEventListener('click', () => {
-  const data = buildBalancedTree(defaultLevels);
-  renderTree(data);
+  const { root } = buildBalancedTree(defaultLevels);
+  renderTree(root);
 });
+
+const { root } = buildBalancedTree(defaultLevels);
 
 renderTree(root);
