@@ -1,4 +1,5 @@
 import { TreeGraph } from '@antv/g6';
+import './styles.css';
 
 const data = {
   id: 'one',
