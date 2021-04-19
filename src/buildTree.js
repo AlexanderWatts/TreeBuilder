@@ -2,7 +2,7 @@ import node from './node';
 
 const buildBalancedTree = (levels) => {
   const totalNodes = 2 ** (levels) - 1;
-  const totalParentNode = 2 ** (levels - 1) - 1;
+  const totalParentNodes = 2 ** (levels - 1) - 1;
 
   const root = node();
   const buffer = [];
@@ -15,7 +15,7 @@ const buildBalancedTree = (levels) => {
     const currentNode = buffer.shift();
     allTreeData.push(currentNode.data);
 
-    if (visited.length < totalParentNode) {
+    if (visited.length < totalParentNodes) {
       const leftNode = node();
       const rightNode = node();
 
