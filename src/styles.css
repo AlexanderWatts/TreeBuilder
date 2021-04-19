@@ -23,5 +23,6 @@ body {
 }
 
 .controls button {
+  cursor: pointer;
   padding: 8px;
 }
