@@ -3,14 +3,17 @@ import node from './node';
 const buildBalancedTree = (levels) => {
   const totalNodes = 2 ** (levels) - 1;
   const totalParentNode = 2 ** (levels - 1) - 1;
+
   const root = node();
   const buffer = [];
   const visited = [];
+  const allTreeData = [];
 
   buffer.push(root);
 
   while (visited.length < totalNodes) {
     const currentNode = buffer.shift();
+    allTreeData.push(currentNode.data);
 
     if (visited.length < totalParentNode) {
       const leftNode = node();
@@ -26,7 +29,11 @@ const buildBalancedTree = (levels) => {
     visited.push(currentNode);
   }
 
-  return root;
+  return ({
+    root,
+    allTreeData,
+    allTreeDataSorted: allTreeData.sort(),
+  });
 };
 
 export default buildBalancedTree;
