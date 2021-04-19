@@ -1,20 +1,8 @@
 import { TreeGraph } from '@antv/g6';
+import buildBalancedTree from './buildTree';
 import './styles.css';
 
-const data = {
-  id: 'one',
-  label: 'Root',
-  children: [
-    {
-      id: 'left',
-      label: 'Left child',
-    },
-    {
-      id: 'right',
-      label: 'Right child',
-    },
-  ],
-};
+const root = buildBalancedTree(3);
 
 const tree = new TreeGraph({
   container: 'root',
@@ -29,5 +17,5 @@ const tree = new TreeGraph({
   },
 });
 
-tree.data(data);
+tree.data(root);
 tree.render();
