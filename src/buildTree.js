@@ -31,6 +31,8 @@ const buildBalancedTree = (levels) => {
 
   return ({
     root,
+    totalNodes,
+    totalParentNodes,
     allTreeData,
     allTreeDataSorted: allTreeData.sort(),
   });
