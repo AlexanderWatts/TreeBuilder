@@ -13,5 +13,5 @@ export const TreeHeightContextProvider = ({ children }) => {
 };
 
 TreeHeightContextProvider.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
