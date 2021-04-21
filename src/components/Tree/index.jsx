@@ -2,9 +2,12 @@ import { useContext, useEffect } from 'react';
 import { TreeGraph } from '@antv/g6';
 import buildBalancedTree from '../../buildTree';
 import { TreeHeightContext } from '../../contexts/TreeHeightContext';
+import { CurrentTreeContext } from '../../contexts/CurrentTreeContext';
 
 const Tree = () => {
   const rendered = document.getElementById('rendered');
+
+  const { setTreeStats } = useContext(CurrentTreeContext);
 
   const { treeHeight } = useContext(TreeHeightContext);
 
@@ -30,7 +33,22 @@ const Tree = () => {
       },
     });
 
-    const { root } = buildBalancedTree(treeHeight);
+    const {
+      root,
+      totalNodes,
+      totalParentNodes,
+      allTreeData,
+      allTreeDataSorted,
+    } = buildBalancedTree(treeHeight);
+
+    setTreeStats({
+      root,
+      totalNodes,
+      totalParentNodes,
+      allTreeData,
+      allTreeDataSorted,
+    });
+
     tree.data(root);
     tree.render();
   }, [treeHeight]);
