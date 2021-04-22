@@ -1,8 +1,17 @@
-.stats {
-  position: absolute;
-  display: inline-block;
-  width: 300px;
-  padding: 20px;
-  top: 0px;
-  right: 0px;
+h3 {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 5px 0px;
+}
+
+ul li span {
+  margin-left: 5px;
 }

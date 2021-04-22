@@ -1,28 +1,37 @@
-import React, { useContext } from 'react';
-import { CurrentTreeContext } from '../../contexts/CurrentTreeContext';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
-const TreeStats = () => {
-  const { treeStats } = useContext(CurrentTreeContext);
-
+const TreeStats = ({ tree, sorted }) => {
   const {
     totalNodes,
     totalParentNodes,
-  } = treeStats;
+  } = tree;
 
   return (
     <div className="stats">
-      <h1>Tree Stats</h1>
-      <div>
-        Total Tree Nodes:
-        {totalNodes}
-      </div>
-      <div>
-        Total Parent Nodes:
-        {totalParentNodes}
-      </div>
+      <h3>Tree stats</h3>
+      <ul>
+        <li>
+          Total parent nodes:
+          <span>{totalParentNodes}</span>
+        </li>
+        <li>
+          Total nodes:
+          <span>{totalNodes}</span>
+        </li>
+        <li>
+          Tree sorted?
+          <span>{`${sorted}`}</span>
+        </li>
+      </ul>
     </div>
   );
+};
+
+TreeStats.propTypes = {
+  tree: PropTypes.objectOf(PropTypes.any).isRequired,
+  sorted: PropTypes.bool.isRequired,
 };
 
 export default TreeStats;
