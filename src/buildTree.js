@@ -34,7 +34,7 @@ const buildBalancedTree = (levels) => {
     totalNodes,
     totalParentNodes,
     allTreeData,
-    allTreeDataSorted: allTreeData.sort(),
+    allTreeDataSorted: allTreeData.sort((a, b) => a - b),
   });
 };
 
