@@ -1,0 +1,10 @@
+button {
+  font-size: inherit;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button span {
+  margin-left: 3px;
+}
