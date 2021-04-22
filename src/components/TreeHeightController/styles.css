@@ -1,0 +1,10 @@
+.heightController * {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.heightController input {
+  margin-top: 5px;
+  font-size: inherit;
+  padding: 5px;
+}
