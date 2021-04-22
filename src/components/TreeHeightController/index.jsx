@@ -4,7 +4,7 @@ import './styles.css';
 
 const TreeHeightController = ({ height, setHeight }) => {
   const updateTreeHeight = (event) => {
-    const treeHeight = event.target.value;
+    const treeHeight = parseInt(event.target.value, 10);
     if (treeHeight >= 1 && treeHeight <= 10) {
       setHeight(treeHeight);
     }
