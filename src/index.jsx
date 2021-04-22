@@ -1,21 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { TreeHeightContextProvider } from './contexts/TreeHeightContext';
-import { CurrentTreeContextProvider } from './contexts/CurrentTreeContext';
-import Controls from './components/Controls';
-import Tree from './components/Tree';
-import TreeStats from './components/TreeStats';
+import TreeState from './components/TreeState';
+import './styles.css';
 
 const App = () => (
-  <>
-    <TreeHeightContextProvider>
-      <CurrentTreeContextProvider>
-        <Controls />
-        <Tree />
-        <TreeStats />
-      </CurrentTreeContextProvider>
-    </TreeHeightContextProvider>
-  </>
+  <TreeState />
 );
 
 render(<App />, document.getElementById('root'));
