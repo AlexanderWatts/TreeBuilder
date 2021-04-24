@@ -9,6 +9,15 @@ const graph = new TreeGraph({
   fitView: true,
   width: document.body.clientWidth,
   height: document.body.clientHeight,
+  defaultEdge: {
+    size: 3,
+  },
+  defaultNode: {
+    size: 25,
+    style: {
+      lineWidth: 3,
+    },
+  },
   modes: {
     default: [
       'drag-canvas',
@@ -28,6 +37,12 @@ const TreeRenderer = ({ unsortedTree, sortedTree, sorted }) => {
     graph.data(data);
     graph.render();
   };
+
+  if (sorted) {
+    graph.cfg.defaultNode.color = 'green';
+  } else {
+    graph.cfg.defaultNode.color = 'blue';
+  }
 
   return (
     <span>{sorted ? render(sortedTree) : render(unsortedTree)}</span>
