@@ -1,9 +1,6 @@
 import node from './node';
 
 const sortBalancedTree = (array, start, end) => {
-  if (end < start) {
-    return null;
-  }
   const mid = Math.ceil((start + end) / 2);
   const root = node();
   root.data = array[mid];
