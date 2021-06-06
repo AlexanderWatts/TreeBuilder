@@ -1,5 +1,9 @@
 # TreeBuilder
 
+Create and sort random complete binary trees
+
+![](./resources/tree-builder.gif)
+
 # Start project
 
 In the root directory run:
